@@ -479,4 +479,79 @@
       <field name="% Used Space" />
     </data>
   </barchart>
+  <linechart name="SQL Connections by Application" shortName="SQL Connections" linesNamedBy="TYPE">
+    <yAxis label="Count" asPercent="false" />
+   <data >
+      <host os="PERFMON" />
+      <type regex=".NET Data Provider for SqlServer \(((?!Total).*)\)" />
+      <field name="NumberOfPooledConnections" />
+    </data>
+  </linechart>
+   <linechart name="Generation # Collection" shortName="Gen# Collect" stacked="true" >
+    <yAxis label="Collection" />
+
+    <data>
+      <host os="PERFMON" />
+      <type name=".NET CLR Memory (Global_)" />
+      <field name="# Gen 0 Collections" alias="Gen0" />
+      <field name="# Gen 1 Collections" alias="Gen1" />
+      <field name="# Gen 2 Collections" alias="Gen2" />
+    </data>
+  </linechart>
+  <linechart name="% Time in GC" shortName="% Time in GC" linesNamedBy="TYPE" >
+    <yAxis label="Percent"  asPercent="true" />
+    <data>
+      <host os="PERFMON" />
+      <type regex=".NET CLR Memory \(((?=w3wp).*)\)" />
+      <field name="% Time in GC" alias="Percent Time in GC" />
+    </data>
+  </linechart>
+ <barchart name="Batch Time Statistics" shortName="Time Stats" categoriesNamedBy="FIELD" barsNamedBy="STAT" subtractionNeeded="true" >
+    <yAxis label="Count"  asPercent="false" />
+    <data stat="MAXIMUM">
+      <host os="PERFMON" />
+      <type name="SQLServer:Batch Resp Statistics (Elapsed Time:Requests)" />
+      <field regex="(?=Batches).*" />
+    </data>
+  </barchart>
+  <linechart name="Buffer Cache Hit Ratio" shortName="Cache Ratio" linesNamedBy="TYPE" >
+    <yAxis label="Percent"  asPercent="true" />
+    <data>
+      <host os="PERFMON" />
+      <type name="SQLServer:Buffer Manager" />
+      <field name="Buffer cache hit ratio" alias="BufferRatio" />
+    </data>
+  </linechart>
+  <linechart name="Page Life Expectancy" shortName="Page Life" linesNamedBy="TYPE" >
+    <yAxis label="Duration"  asPercent="false" />
+    <data>
+      <host os="PERFMON" />
+      <type regex="SQLServer:Buffer Manager" />
+      <field name="Page life expectancy" alias="BufferRatio" />
+    </data>
+  </linechart>
+  <linechart name="DB Transaction Per Sec" shortName="Trans Per Sec" linesNamedBy="TYPE" >
+    <yAxis label="Count"  asPercent="false" />
+    <data>
+      <host os="PERFMON" />
+      <type regex="SQLServer:Databases \(((?!Total).*)\)" />
+      <field name="Transactions/sec" alias="TransPerSec" />
+    </data>
+  </linechart>
+   <linechart name="DB Active Transactions" shortName="Active Trans" linesNamedBy="TYPE" >
+    <yAxis label="Count"  asPercent="false" />
+    <data>
+      <host os="PERFMON" />
+      <type regex="SQLServer:Databases \(((?!Total).*)\)" />
+      <field name="Active Transactions" alias="Trans" />
+    </data>
+  </linechart>
+   <linechart name="User Connections" shortName="UserConn" linesNamedBy="TYPE" >
+    <yAxis label="Count"  asPercent="false" />
+    <data>
+      <host os="PERFMON" />
+      <type regex="SQLServer:General Statistics" />
+      <field name="User Connections" alias="UserConn" />
+    </data>
+  </linechart>
 </charts>
