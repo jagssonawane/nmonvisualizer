@@ -251,4 +251,93 @@
       <field name="entitled" />
     </data>
   </linechart>
+  <linechart name="Exception Thrown Rate By Processes" shortName="Exception Rate" linesNamedBy="HOST">
+    <yAxis label="Exception Rate" asPercent="false" />
+    <data>
+      <host os="PERFMON" />
+      <type name=".NET CLR Exceptions \(Global_)" />
+      <field name="# of Exceps Thrown" />
+    </data>
+  </linechart> 
+  <linechart name="% Time in GC" shortName="% Time in GC" linesNamedBy="HOST" >
+    <yAxis label="Percent"  asPercent="true" />
+    <data>
+      <host os="PERFMON" />
+      <type name=".NET CLR Memory (Global_)" />
+      <field name="% Time in GC" alias="Percent Time in GC" />
+    </data>
+  </linechart>
+  <linechart name="Network Queue Length" shortName="Network Queue" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="Network Interface (Total)" />
+      <field name="Output Queue Length" alias="NetworkQueue " />
+    </data>
+  </linechart>
+  <linechart name="ASP.Net Active Session" shortName="Active Session" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="ASP.NET Apps v4.0.30319 (_Total__)" />
+      <field name="Sessions Active" alias="Sessions" />
+    </data>
+  </linechart>
+  <linechart name="ASP.Net Requests per Sec" shortName="Req per Sec" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="ASP.NET Apps v4.0.30319 (_Total__)" />
+      <field name="Requests/Sec" alias="Requests" />
+    </data>
+  </linechart>
+  
+  <linechart name="ASP.Net Requests Executing" shortName="Requests Executing" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="ASP.NET Apps v4.0.30319 (_Total__)" />
+      <field name="Requests Executing" alias="Reqs Executing" />
+    </data>
+  </linechart>
+  <linechart name="ASP.Net Requests Exec Time" shortName="Req Exec Time" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="ASP.NET Apps v4.0.30319 (_Total__)" />
+      <field name="Request Execution Time" alias="Reqs ExecTime" />
+    </data>
+  </linechart>
+  <linechart name="ASP.Net Requests Queued" shortName="Req Queued" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="ASP.NET v4.0.30319" />
+      <field name="Requests Queued" alias="Reqs Queued" />
+    </data>
+  </linechart>
+  <linechart name="ASP.Net Requests Failed" shortName="Requests Failed" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="ASP.NET Apps v4.0.30319 (_Total__)" />
+      <field name="Requests Failed" alias="Reqs Failed" />
+    </data>
+  </linechart>
+   <linechart name="Active Connections" shortName="ActiveConnections" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="TCPv4" />
+      <field name="Connections Active" alias="ActiveCon" />
+    </data>
+  </linechart>
+  <linechart name="Connections Established" shortName="Conn Establish" linesNamedBy="HOST">
+    <yAxis label="Count" />
+    <data>
+      <host os="PERFMON" />
+      <type name="TCPv4" />
+      <field name="Connections Established" alias="ActiveCon" />
+    </data>
+  </linechart>
 </charts>
